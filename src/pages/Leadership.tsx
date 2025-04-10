@@ -9,7 +9,7 @@ const executiveTeam = [
   {
     name: 'Munene Vine',
     position: 'Chief Executive Officer',
-    bio: 'With over 20 years in mining and sustainability, Munene leads Milgen Mines' strategic vision and global growth. His expertise spans operational excellence, resource optimization, and ethical mining practices.',
+    bio: 'With over 20 years in mining and sustainability, Munene leads Milgen Mines\' strategic vision and global growth. His expertise spans operational excellence, resource optimization, and ethical mining practices.',
     image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000'
   },
   {

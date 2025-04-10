@@ -69,8 +69,8 @@ const Leadership = () => {
     <>
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="h-[50vh] relative flex items-center bg-[url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1920')] bg-cover bg-center">
+        {/* Hero Section - Updated with real mining image */}
+        <section className="h-[50vh] relative flex items-center bg-[url('https://images.unsplash.com/photo-1597392526749-eda994cc75d1?q=80&w=1920')] bg-cover bg-center">
           <div className="absolute inset-0 bg-milgen-black bg-opacity-70"></div>
           <div className="container-custom relative z-10">
             <div className="max-w-3xl animate-fade-in">
@@ -185,7 +185,7 @@ const Leadership = () => {
           </div>
         </section>
 
-        {/* Company Culture */}
+        {/* Company Culture - Updated with real mining site image */}
         <section className="section-padding bg-milgen-black text-white">
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -220,10 +220,74 @@ const Leadership = () => {
               </div>
               <div>
                 <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1920" 
-                  alt="Team collaboration" 
+                  src="https://images.unsplash.com/photo-1626619540199-afd6d3fcd1f4?q=80&w=1920" 
+                  alt="Mining team collaboration" 
                   className="rounded-lg shadow-lg w-full"
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mining Operations Showcase - New section with mineral images */}
+        <section className="section-padding bg-milgen-light">
+          <div className="container-custom">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Our <span className="text-milgen-yellow">Mining Operations</span>
+              </h2>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                Our leadership team oversees diverse mining operations across Kenya, ensuring sustainable extraction of valuable minerals.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1586043511338-6ed43a9d0674?q=80&w=1000" 
+                    alt="Gold Mining Operations" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Gold Mining</h3>
+                  <p className="text-gray-700">
+                    High-purity gold extraction operations in Migori & Western Kenya regions.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1618500299034-abce7ed0e8df?q=80&w=1000" 
+                    alt="Gemstone Mining" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Gemstone Operations</h3>
+                  <p className="text-gray-700">
+                    Extraction of high-quality rubies, sapphires and garnets in Taita Taveta.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg overflow-hidden shadow-md">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1606761568499-5d2d30cf57a2?q=80&w=1000" 
+                    alt="Copper Mining" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2">Copper Operations</h3>
+                  <p className="text-gray-700">
+                    Sustainable copper recycling and processing facilities in Nairobi & Mombasa.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

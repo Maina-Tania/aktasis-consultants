@@ -18,12 +18,17 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        apple: "bg-primary text-primary-foreground hover:brightness-105 rounded-full",
+        "apple-secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full",
+        "apple-destructive": "bg-destructive text-destructive-foreground hover:brightness-105 rounded-full",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
+        "apple-default": "h-10 px-6 py-2 text-base",
+        "apple-lg": "h-12 px-8 py-3 text-base",
       },
     },
     defaultVariants: {

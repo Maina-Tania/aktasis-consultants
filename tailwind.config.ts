@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				inter: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Helvetica Neue', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,6 +54,14 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				apple: {
+					blue: 'hsl(var(--apple-blue))',
+					gray: 'hsl(var(--apple-gray))',
+					black: 'hsl(var(--apple-black))',
+					white: 'hsl(var(--apple-white))',
+					red: 'hsl(var(--apple-red))',
+					green: 'hsl(var(--apple-green))',
 				},
 				milgen: {
 					yellow: '#F7CA18',

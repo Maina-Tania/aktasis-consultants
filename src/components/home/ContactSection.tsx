@@ -1,110 +1,208 @@
 
 import React from 'react';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail, Send, Clock, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ContactSection = () => {
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Visit Our Studio",
+      details: [
+        "123 Architecture Ave, Suite 100",
+        "Downtown Design District",
+        "City, State 12345"
+      ]
+    },
+    {
+      icon: Phone,
+      title: "Call Us",
+      details: [
+        "+1 (555) 123-4567",
+        "Mon-Fri: 9:00 AM - 6:00 PM"
+      ]
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      details: [
+        "hello@aktasisconsultancy.com",
+        "projects@aktasisconsultancy.com"
+      ]
+    }
+  ];
+
   return (
-    <section className="section-padding bg-milgen-yellow">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="text-milgen-black">Get In</span> Touch
+    <section className="py-16 sm:py-20 bg-blue-600">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="order-2 lg:order-1"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+              <span className="text-white">Get In</span> Touch
             </h2>
-            <p className="text-lg mb-8 text-gray-800">
-              Have questions about our operations or interested in partnership opportunities? 
-              Reach out to our team and we'll be happy to assist you.
+            <p className="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed">
+              Ready to start your architectural project? Let's discuss your vision and bring your ideas to life.
             </p>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <MapPin className="mr-4 text-milgen-black shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="font-semibold text-lg">Location</h3>
-                  <p>Nairobi, Kenya</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <Phone className="mr-4 text-milgen-black shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="font-semibold text-lg">Phone</h3>
-                  <p>+254 757 476560</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start">
-                <Mail className="mr-4 text-milgen-black shrink-0 mt-1" size={24} />
-                <div>
-                  <h3 className="font-semibold text-lg">Email</h3>
-                  <p>brinac.co@gmail.com</p>
-                </div>
-              </div>
+
+            {/* Contact Details - Mobile Optimized */}
+            <div className="space-y-4 sm:space-y-6">
+              {contactInfo.map((info, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex items-start"
+                >
+                  <div className="flex-shrink-0 mr-3 sm:mr-4">
+                    <info.icon className="text-white shrink-0 mt-1" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold mb-1 text-sm sm:text-base">{info.title}</h3>
+                    <div className="text-blue-100 text-sm sm:text-base">
+                      {info.details.map((detail, detailIndex) => (
+                        <p key={detailIndex} className="leading-relaxed">{detail}</p>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </div>
-          
-          <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold mb-6 text-milgen-black">Send us a message</h3>
-            
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-milgen-yellow"
-                    placeholder="Your name"
-                  />
+
+            {/* Mobile-specific quick actions */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="mt-6 sm:mt-8 lg:hidden"
+            >
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  to="tel:+15551234567"
+                  className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white text-sm font-medium transition-all duration-300 hover:bg-white/30 touch-manipulation"
+                >
+                  <Phone className="mr-2" size={16} />
+                  Call Now
+                </Link>
+                <Link
+                  to="mailto:hello@aktasisconsultancy.com"
+                  className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white text-sm font-medium transition-all duration-300 hover:bg-white/30 touch-manipulation"
+                >
+                  <Mail className="mr-2" size={16} />
+                  Email Us
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Contact Form - Mobile Optimized */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="order-1 lg:order-2"
+          >
+            <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-2xl">
+              <div className="flex items-center mb-6">
+                <MessageCircle className="text-blue-600 mr-3" size={24} />
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Send us a message</h3>
+              </div>
+              
+              <form className="space-y-4 sm:space-y-6">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200"
+                      placeholder="Your first name"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200"
+                      placeholder="Your last name"
+                    />
+                  </div>
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                     Email Address
                   </label>
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-milgen-yellow"
-                    placeholder="Your email"
+                    name="email"
+                    className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200"
+                    placeholder="your.email@example.com"
                   />
                 </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200"
+                    placeholder="Your phone number"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Project Details
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all duration-200 resize-none"
+                    placeholder="Tell us about your project..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white px-6 sm:px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold flex items-center justify-center touch-manipulation transform hover:scale-105"
+                >
+                  <Send className="mr-2" size={18} />
+                  Send Message
+                </button>
+              </form>
+
+              <div className="mt-4 sm:mt-6 text-center">
+                <div className="flex items-center justify-center text-sm text-gray-500">
+                  <Clock className="mr-2" size={16} />
+                  <span>We'll get back to you within 24 hours</span>
+                </div>
               </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-milgen-yellow"
-                  placeholder="Message subject"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-milgen-yellow"
-                  placeholder="Your message"
-                ></textarea>
-              </div>
-              
-              <button
-                type="submit"
-                className="bg-milgen-black text-white px-8 py-3 rounded-md hover:bg-gray-900 transition-colors duration-300 font-semibold"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

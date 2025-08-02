@@ -21,7 +21,7 @@ const ModernHeroSection = () => {
         background="transparent"
         minSize={0.8}
         maxSize={1.8}
-        particleColor="#F7CA18"
+        particleColor="#3B82F6"
         particleDensity={80}
         speed={2}
         className="w-full h-full absolute inset-0"
@@ -44,8 +44,8 @@ const ModernHeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <span className="text-milgen-yellow">Powering</span> the Future
-            <span className="block mt-2 text-white font-light text-3xl md:text-4xl">With Sustainable Mining</span>
+            <span className="text-blue-500">Designing</span> the Future
+            <span className="block mt-2 text-white font-light text-3xl md:text-4xl">With Innovative Architecture</span>
           </motion.h1>
           
           <motion.p 
@@ -54,7 +54,7 @@ const ModernHeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            From Earth's depths to global horizons—Milgen Mines fuels possibilities through sustainable, innovative mining across Africa.
+            From concept to construction—we create sustainable, beautiful spaces that inspire and endure. Transforming visions into architectural masterpieces.
           </motion.p>
           
           <motion.div 
@@ -65,14 +65,14 @@ const ModernHeroSection = () => {
           >
             <Button variant="default" size="lg" asChild>
               <Link to="/about" className="flex items-center">
-                Discover Our Work 
+                View Our Projects 
                 <ArrowRight className="ml-2" size={18} />
               </Link>
             </Button>
             
             <Button variant="secondary" size="lg" asChild>
               <Link to="/contact" className="flex items-center">
-                Contact Us
+                Start Your Project
                 <ArrowRight className="ml-2" size={18} />
               </Link>
             </Button>

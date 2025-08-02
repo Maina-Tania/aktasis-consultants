@@ -63,11 +63,15 @@ export default {
 					red: 'hsl(var(--apple-red))',
 					green: 'hsl(var(--apple-green))',
 				},
-				milgen: {
-					yellow: '#F7CA18',
-					black: '#111111',
-					gray: '#8E9196',
-					light: '#F6F6F7'
+				architect: {
+					blue: '#3B82F6',
+					steel: '#64748B',
+					slate: '#1E293B',
+					light: '#F8FAFC',
+					accent: '#0EA5E9',
+					success: '#10B981',
+					warning: '#F59E0B',
+					error: '#EF4444'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',

@@ -7,22 +7,22 @@ const ModernStatisticsSection = () => {
   const isMobile = useIsMobile();
   
   const barData = [
-    { name: 'Gemstones', value: 65 },
-    { name: 'Coltan', value: 85 },
-    { name: 'Gold', value: 60 },
-    { name: 'Cinnabar', value: 40 },
-    { name: 'Copper', value: 70 },
+    { name: 'Residential', value: 75 },
+    { name: 'Commercial', value: 85 },
+    { name: 'Hospitality', value: 60 },
+    { name: 'Sustainable', value: 90 },
+    { name: 'Interior', value: 70 },
   ];
 
   const pieData = [
-    { name: 'Coltan', value: 40 },
-    { name: 'Copper', value: 30 },
-    { name: 'Gemstones', value: 15 },
-    { name: 'Gold', value: 10 },
-    { name: 'Cinnabar', value: 5 },
+    { name: 'Commercial', value: 35 },
+    { name: 'Residential', value: 30 },
+    { name: 'Hospitality', value: 20 },
+    { name: 'Sustainable', value: 10 },
+    { name: 'Interior', value: 5 },
   ];
 
-  const COLORS = ['#F7CA18', '#1A1F2C', '#D946EF', '#F97316', '#0EA5E9'];
+  const COLORS = ['#3B82F6', '#1E293B', '#0EA5E9', '#10B981', '#64748B'];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -48,7 +48,7 @@ const ModernStatisticsSection = () => {
     <section className="py-20 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-gray-100 opacity-60"></div>
-      <div className="absolute -top-24 -right-24 w-96 h-96 bg-milgen-yellow/10 rounded-full blur-3xl"></div>
+      <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
       
       <motion.div 
@@ -60,10 +60,10 @@ const ModernStatisticsSection = () => {
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Market <span className="text-milgen-yellow">Insights</span>
+            Project <span className="text-blue-500">Insights</span>
           </h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Explore the growing demand and market share of our diverse mineral portfolio.
+            Explore our diverse portfolio and the growing demand for innovative architectural solutions.
           </p>
         </motion.div>
 
@@ -72,7 +72,7 @@ const ModernStatisticsSection = () => {
             variants={itemVariants}
             className="bg-white/70 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300"
           >
-            <h3 className="text-xl font-bold mb-6 text-center">Projected Demand Growth (%)</h3>
+            <h3 className="text-xl font-bold mb-6 text-center">Project Success Rate (%)</h3>
             <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
@@ -83,7 +83,7 @@ const ModernStatisticsSection = () => {
                   <XAxis dataKey="name" angle={-45} textAnchor="end" height={60} />
                   <YAxis />
                   <Tooltip 
-                    cursor={{ fill: 'rgba(247, 202, 24, 0.1)' }}
+                    cursor={{ fill: 'rgba(59, 130, 246, 0.1)' }}
                     contentStyle={{ 
                       borderRadius: '8px', 
                       border: 'none', 
@@ -93,33 +93,30 @@ const ModernStatisticsSection = () => {
                   />
                   <Bar 
                     dataKey="value" 
-                    fill="#F7CA18" 
+                    fill="#3B82F6" 
                     radius={[4, 4, 0, 0]}
                     animationDuration={1500}
                   />
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <p className="text-center text-sm text-gray-500 mt-6">
-              Coltan shows the highest projected demand growth in the coming years.
-            </p>
           </motion.div>
 
           <motion.div 
             variants={itemVariants}
             className="bg-white/70 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300"
           >
-            <h3 className="text-xl font-bold mb-6 text-center">Global Export Market Share (%)</h3>
-            <div className="h-80 flex justify-center">
-              <ResponsiveContainer width={isMobile ? "100%" : "80%"} height="100%">
+            <h3 className="text-xl font-bold mb-6 text-center">Portfolio Distribution</h3>
+            <div className="h-80">
+              <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
                     data={pieData}
                     cx="50%"
                     cy="50%"
                     labelLine={false}
-                    label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                    outerRadius={isMobile ? 80 : 100}
+                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                    outerRadius={80}
                     fill="#8884d8"
                     dataKey="value"
                     animationDuration={1500}
@@ -129,7 +126,6 @@ const ModernStatisticsSection = () => {
                     ))}
                   </Pie>
                   <Tooltip 
-                    formatter={(value) => `${value}%`}
                     contentStyle={{ 
                       borderRadius: '8px', 
                       border: 'none', 
@@ -137,15 +133,30 @@ const ModernStatisticsSection = () => {
                       backgroundColor: 'rgba(255,255,255,0.95)'
                     }}
                   />
-                  <Legend layout="horizontal" verticalAlign="bottom" align="center" />
                 </PieChart>
               </ResponsiveContainer>
             </div>
-            <p className="text-center text-sm text-gray-500 mt-6">
-              Coltan and copper represent our largest export market segments.
-            </p>
           </motion.div>
         </div>
+
+        {/* Key Metrics */}
+        <motion.div 
+          variants={itemVariants}
+          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          <div className="text-center bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+            <div className="text-3xl font-bold text-blue-500 mb-2">150+</div>
+            <div className="text-gray-600">Projects Completed</div>
+          </div>
+          <div className="text-center bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+            <div className="text-3xl font-bold text-blue-500 mb-2">95%</div>
+            <div className="text-gray-600">Client Satisfaction</div>
+          </div>
+          <div className="text-center bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+            <div className="text-3xl font-bold text-blue-500 mb-2">20+</div>
+            <div className="text-gray-600">Years Experience</div>
+          </div>
+        </motion.div>
       </motion.div>
     </section>
   );

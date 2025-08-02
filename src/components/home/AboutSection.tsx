@@ -1,129 +1,171 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Check, Award, Users, Globe, Star, Building } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
-  const fadeInUp = {
-    hidden: { y: 60, opacity: 0 },
-    visible: { 
-      y: 0, 
-      opacity: 1,
-      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
-    }
-  };
+  const stats = [
+    { icon: Award, number: "50+", label: "Projects Completed" },
+    { icon: Users, number: "100+", label: "Happy Clients" },
+    { icon: Globe, number: "5+", label: "Years Experience" },
+    { icon: Check, number: "100%", label: "Client Satisfaction" }
+  ];
 
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
+  const values = [
+    "Innovative Design Solutions",
+    "Sustainable Architecture",
+    "Client-Centric Approach",
+    "Quality Excellence"
+  ];
 
-  const achievements = [
-    { value: '3.2K+', label: 'Tons Exported' },
-    { value: '12+', label: 'Active Mines' },
-    { value: '850+', label: 'Employees' },
-    { value: '18', label: 'Countries Served' },
+  const highlights = [
+    { icon: Star, text: "Licensed & Certified" },
+    { icon: Building, text: "Modern Design Approach" },
+    { icon: Check, text: "Timely Delivery" }
   ];
 
   return (
-    <section id="about-section" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <motion.div 
-            className="lg:col-span-5 relative"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeInUp}
+    <section className="py-16 sm:py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="order-2 lg:order-1"
           >
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-yellow-500 opacity-20 -full blur-2xl"></div>
-            <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-yellow-500 opacity-20 rounded-full blur-2xl"></div>
-            
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?q=80&w=1920" 
-                alt="Mining operations" 
-                className="rounded-2xl shadow-xl w-full object-cover h-96 lg:h-auto"
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+                About <span className="text-blue-600">Aktasis</span> Consultancy
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8">
+                We are a premier architectural consultancy dedicated to transforming visions into exceptional built environments. 
+                Our commitment to innovative design, sustainable practices, and client satisfaction sets us apart in the industry.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8">
+                Aktasis Consultancy leads in <span className="font-semibold">innovative architectural design and sustainable building solutions</span>.
+              </p>
+            </div>
+
+            {/* Highlights - Mobile Optimized */}
+            <div className="mb-6 sm:mb-8">
+              <div className="flex flex-wrap gap-3">
+                {highlights.map((highlight, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-center px-3 py-2 bg-blue-50 rounded-lg border border-blue-100"
+                  >
+                    <highlight.icon className="text-blue-600 mr-2" size={16} />
+                    <span className="text-sm font-medium text-gray-700">{highlight.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Stats - Mobile Optimized */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="flex justify-center mb-2">
+                    <stat.icon className="text-blue-600" size={20} />
+                  </div>
+                  <div className="text-2xl sm:text-3xl font-bold text-gray-900">{stat.number}</div>
+                  <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Values - Mobile Optimized */}
+            <div className="mb-6 sm:mb-8">
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-3 sm:mb-4">Our Values</h3>
+              <div className="space-y-2 sm:space-y-3">
+                {values.map((value, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-center"
+                  >
+                    <Check className="text-blue-600 mr-3 flex-shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">{value}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA - Mobile Optimized */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Link
+                to="/about"
+                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 sm:py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 touch-manipulation"
+              >
+                Learn More About Us
+                <Check className="ml-2" size={18} />
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* Image - Mobile Optimized */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative order-1 lg:order-2"
+          >
+            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800"
+                alt="Aktasis Consultancy - Professional Architectural Services"
+                className="w-full h-64 sm:h-80 md:h-96 lg:h-[600px] object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-lg p-4 md:p-6 max-w-xs">
-                <div className="flex items-center gap-4">
-                  <div className="bg-yellow-100 p-3 rounded-full">
-                    <CheckCircle size={24} className="text-yellow-600" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-500">ISO Certified</p>
-                    <p className="text-lg font-bold">Sustainable Mining</p>
-                  </div>
+              {/* Floating Card - Mobile Optimized */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-xl"
+              >
+                <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Excellence in Design</h4>
+                <p className="text-sm sm:text-base text-gray-600">
+                  Every project reflects our commitment to innovative design, sustainable practices, and exceptional quality.
+                </p>
+              </motion.div>
+
+              {/* Mobile-specific overlay info */}
+              <div className="absolute top-3 left-3 sm:hidden">
+                <div className="bg-black/70 text-white px-2 py-1 rounded text-xs">
+                  Professional
                 </div>
               </div>
             </div>
-          </motion.div>
-          
-          <motion.div 
-            className="lg:col-span-7 space-y-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp}>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-yellow-500">Who</span> We Are
-              </h2>
-              
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Milgen Mines leads in <span className="font-semibold">responsible mining and global exports</span>. 
-                Our practices prioritize sustainability, innovation, and community development across Africa.
-              </p>
-              
-              <p className="text-lg text-gray-700 leading-relaxed">
-                We harness Africa's vast mineral wealth to support economic growth, industrial development, 
-                job creation, and foreign investment through sustainable extraction and technological innovation.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-6"
-              variants={fadeInUp}
-            >
-              {achievements.map((item, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl md:text-4xl font-bold text-yellow-500 mb-1">{item.value}</div>
-                  <div className="text-sm text-gray-600">{item.label}</div>
-                </div>
-              ))}
-            </motion.div>
-            
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 gap-6"
-              variants={fadeInUp}
-            >
-              <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-yellow-500">
-                <h3 className="font-bold text-xl mb-3">Sustainable Resource</h3>
-                <p className="text-gray-700">Ethical mining practices, environmental conservation, and comprehensive land rehabilitation programs</p>
-              </div>
-              
-              <div className="bg-gray-50 p-6 rounded-xl border-l-4 border-yellow-500">
-                <h3 className="font-bold text-xl mb-3">Economic Growth</h3>
-                <p className="text-gray-700">Local employment opportunities, infrastructure development, and education support initiatives</p>
-              </div>
-            </motion.div>
-            
-            <motion.div variants={fadeInUp}>
-              <Link 
-                to="/about" 
-                className="inline-flex items-center bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
-              >
-                Learn more about us 
-                <ArrowRight className="ml-2" size={18} />
-              </Link>
-            </motion.div>
+
+            {/* Decorative elements for larger screens */}
+            <div className="hidden lg:block absolute -top-4 -right-4 w-24 h-24 bg-blue-600/20 rounded-full blur-xl"></div>
+            <div className="hidden lg:block absolute -bottom-4 -left-4 w-32 h-32 bg-purple-600/20 rounded-full blur-xl"></div>
           </motion.div>
         </div>
       </div>

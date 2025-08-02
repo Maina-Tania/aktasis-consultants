@@ -4,42 +4,42 @@ import { ArrowRight, MapPin, CheckCircle2, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 
-const operations = [
+const projects = [
   {
-    id: 'gemstones',
-    title: 'Gemstones',
-    locations: 'Taita Taveta & Garbatula',
-    description: 'Extraction of high-quality rubies, sapphires and garnets for luxury markets worldwide.',
-    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1000',
-    stats: '4.2K+ carats monthly'
+    id: 'residential',
+    title: 'Residential',
+    locations: 'Modern Homes & Apartments',
+    description: 'Creating beautiful, functional living spaces that blend comfort with contemporary design.',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000',
+    stats: '45+ Projects'
   },
   {
-    id: 'coltan',
-    title: 'Coltan',
-    locations: 'Embu, Kitui & Turkana',
-    description: 'Mining vital coltan used in electronics and aerospace industries globally.',
-    image: 'https://images.unsplash.com/photo-1569144157596-65c376e7bcfd?q=80&w=1000',
-    stats: '1.8K tons annually'
+    id: 'commercial',
+    title: 'Commercial',
+    locations: 'Office Buildings & Retail',
+    description: 'Designing innovative commercial spaces that enhance productivity and customer experience.',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000',
+    stats: '30+ Buildings'
   },
   {
-    id: 'gold',
-    title: 'Gold',
-    locations: 'Migori & Western Kenya',
-    description: 'Extracting high-purity gold meeting international standards for investment and industry.',
-    image: 'https://images.unsplash.com/photo-1610375461246-83df859d849d?q=80&w=1000',
-    stats: '850kg per year'
+    id: 'hospitality',
+    title: 'Hospitality',
+    locations: 'Hotels & Resorts',
+    description: 'Crafting memorable hospitality experiences through thoughtful architectural design.',
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1000',
+    stats: '25+ Venues'
   },
   {
-    id: 'cinnabar',
-    title: 'Cinnabar',
-    locations: 'Vitengeni',
-    description: 'Sourcing mercury for essential industrial processes with strict safety protocols.',
-    image: 'https://images.unsplash.com/photo-1624365169398-e4e120beb080?q=80&w=1000',
-    stats: '520 tons processed'
+    id: 'sustainable',
+    title: 'Sustainable',
+    locations: 'Green Buildings',
+    description: 'Pioneering eco-friendly architecture that minimizes environmental impact.',
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000',
+    stats: '20+ Green Projects'
   }
 ];
 
-const ModernMiningOperationsSection = () => {
+const ModernProjectsSection = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -63,8 +63,8 @@ const ModernMiningOperationsSection = () => {
     <section className="py-24 relative overflow-hidden bg-gradient-to-b from-background via-background/95 to-background">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-40 right-0 w-[30rem] h-[30rem] bg-milgen-yellow/5 rounded-full blur-[120px]"></div>
-        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-milgen-yellow/10 rounded-full blur-[80px]"></div>
+        <div className="absolute top-40 right-0 w-[30rem] h-[30rem] bg-blue-500/5 rounded-full blur-[120px]"></div>
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[80px]"></div>
       </div>
 
       {/* Content */}
@@ -83,96 +83,91 @@ const ModernMiningOperationsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="px-4 py-1.5 bg-milgen-yellow/10 text-milgen-yellow rounded-full text-sm font-medium">
-              Our Operations
+            <span className="px-4 py-1.5 bg-blue-500/10 text-blue-600 rounded-full text-sm font-medium">
+              Our Projects
             </span>
           </motion.div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Our <span className="text-milgen-yellow">Mining Operations</span>
+            Our <span className="text-blue-500">Architectural Projects</span>
           </h2>
           
           <p className="text-lg text-gray-600">
-            Milgen Mines operates across key mineral sectors in strategic locations throughout Kenya, 
-            delivering premium resources to global markets.
+            We specialize in creating innovative architectural solutions across diverse sectors, 
+            delivering exceptional designs that stand the test of time.
           </p>
         </motion.div>
 
+        {/* Projects Grid */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-100px" }}
         >
-          {operations.map((op, index) => (
+          {projects.map((project, index) => (
             <motion.div 
-              key={op.id}
-              variants={itemVariants} 
-              className="rounded-2xl overflow-hidden group"
-              whileHover={{ y: -8, transition: { duration: 0.2 } }}
+              key={project.id}
+              className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300"
+              variants={itemVariants}
+              whileHover={{ y: -8 }}
             >
-              <div className="relative h-56 overflow-hidden">
+              {/* Image */}
+              <div className="relative h-64 overflow-hidden">
                 <img 
-                  src={op.image} 
-                  alt={op.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-                
-                {/* Content overlay */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <div className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full inline-flex items-center w-fit mb-3">
-                    <span className="w-2 h-2 rounded-full bg-green-400 mr-2"></span>
-                    <span className="text-xs text-white font-medium">Active Operation</span>
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-white mb-1">{op.title}</h3>
-                  
-                  <div className="flex items-center text-sm text-white/80 mb-2">
-                    <MapPin size={14} className="mr-1 text-milgen-yellow" />
-                    <p>{op.locations}</p>
-                  </div>
+                {/* Stats overlay */}
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <span className="text-sm font-semibold text-gray-900">{project.stats}</span>
                 </div>
               </div>
               
-              <div className="bg-white/80 backdrop-blur-md dark:bg-black/40 p-6 border border-gray-100 dark:border-gray-800">
-                <div className="flex items-start justify-between mb-4">
-                  <p className="text-gray-700 dark:text-gray-300">{op.description}</p>
+              {/* Content */}
+              <div className="p-6">
+                <div className="flex items-center mb-2">
+                  <MapPin className="w-4 h-4 text-blue-500 mr-2" />
+                  <span className="text-sm text-gray-600">{project.locations}</span>
                 </div>
                 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-sm text-milgen-yellow font-medium">
-                    <CheckCircle2 size={14} />
-                    <span>{op.stats}</span>
-                  </div>
-                  
-                  <Link 
-                    to={`/operations#${op.id}`}
-                    className="inline-flex items-center text-milgen-yellow font-medium hover:text-yellow-600 transition-colors text-sm"
-                  >
-                    Learn more
-                    <ArrowRight className="ml-1" size={14} />
-                  </Link>
-                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
+                
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                  {project.description}
+                </p>
+                
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="group-hover:text-blue-600 p-0 h-auto"
+                >
+                  <span className="flex items-center text-sm font-medium">
+                    View Project
+                    <ArrowUpRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                  </span>
+                </Button>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
+        {/* CTA Section */}
         <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <Button variant="apple" size="apple-lg" asChild>
+          <Button asChild size="lg" className="group">
             <Link to="/operations" className="flex items-center">
-              View All Operations
-              <ArrowUpRight className="ml-2" size={18} />
+              View All Projects
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </motion.div>
@@ -181,4 +176,4 @@ const ModernMiningOperationsSection = () => {
   );
 };
 
-export default ModernMiningOperationsSection; 
+export default ModernProjectsSection; 

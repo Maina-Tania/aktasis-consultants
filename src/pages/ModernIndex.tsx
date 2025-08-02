@@ -2,10 +2,9 @@ import React, { useEffect } from 'react';
 import ModernLayout from '../components/layout/ModernLayout';
 import ModernHeroSection from '../components/home/ModernHeroSection';
 import ModernAboutSection from '../components/home/ModernAboutSection';
-import ModernMiningOperationsSection from '../components/home/ModernMiningOperationsSection';
-import ModernVisionSection from '../components/home/ModernVisionSection';
+import ModernProjectsSection from '../components/home/ModernMiningOperationsSection';
+import ModernServicesSection from '../components/home/ModernVisionSection';
 import ModernStatisticsSection from '../components/home/ModernStatisticsSection';
-import ModernLeadershipSection from '../components/home/ModernLeadershipSection';
 import ModernContactSection from '../components/home/ModernContactSection';
 
 const ModernIndex = () => {
@@ -19,10 +18,9 @@ const ModernIndex = () => {
       <div className="flex flex-col">
         <ModernHeroSection />
         <ModernAboutSection />
-        <ModernMiningOperationsSection />
-        <ModernVisionSection />
+        <ModernProjectsSection />
+        <ModernServicesSection />
         <ModernStatisticsSection />
-        <ModernLeadershipSection />
         <ModernContactSection />
       </div>
     </ModernLayout>

@@ -1,122 +1,113 @@
 
-import React, { useEffect } from 'react';
-import Header from '../components/layout/Header';
-import Footer from '../components/layout/Footer';
+import React from 'react';
+import ModernLayout from '../components/layout/ModernLayout';
 
 const PrivacyPolicy = () => {
-  // Scroll to top when the page loads
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <>
-      <Header />
-      <main className="bg-white">
-        <div className="container-custom py-16 md:py-24">
-          <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+    <ModernLayout>
+      <div className="container-custom py-24">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-8">Privacy Policy</h1>
           
-          <div className="prose max-w-none">
-            <p className="mb-6">
-              Last Updated: April 10, 2025
+          <div className="prose prose-lg max-w-none">
+            <p className="text-gray-600 mb-8">
+              At Aktasis Consultancy, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website www.aktasisconsultancy.com or use our services.
             </p>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">1. Introduction</h2>
-            <p className="mb-4">
-              This Privacy Policy explains how Milgen Mines ("we," "our," or "us") collects, uses, shares, and protects your personal information when you visit our website, contact us, or interact with our services. We respect your privacy and are committed to protecting your personal information.
+            
+            <h2 className="text-2xl font-bold mt-8 mb-4">1. Information We Collect</h2>
+            <p className="text-gray-600 mb-6">
+              We collect information that you provide directly to us, such as when you fill out our contact form, request a consultation, or communicate with us. This may include:
             </p>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">2. Information We Collect</h2>
-            <h3 className="text-xl font-semibold mt-6 mb-3">2.1 Personal Information</h3>
-            <p className="mb-4">
-              We may collect the following types of personal information:
-            </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Contact information (name, email address, phone number, postal address)</li>
-              <li>Professional or employment-related information</li>
-              <li>Communication preferences</li>
-              <li>Information you provide in forms, surveys, or correspondence</li>
+            <ul className="list-disc pl-6 mb-6 text-gray-600">
+              <li>Name and contact information (email, phone number)</li>
+              <li>Project details and requirements</li>
+              <li>Budget and timeline information</li>
+              <li>Any other information you choose to provide</li>
             </ul>
-
-            <h3 className="text-xl font-semibold mt-6 mb-3">2.2 Technical Information</h3>
-            <p className="mb-4">
-              When you visit our website, we may automatically collect:
+            
+            <h2 className="text-2xl font-bold mt-8 mb-4">2. How We Use Your Information</h2>
+            <p className="text-gray-600 mb-6">
+              We use the information we collect to:
             </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>IP address and device information</li>
-              <li>Browser type and version</li>
-              <li>Operating system</li>
-              <li>Pages visited and time spent on those pages</li>
-              <li>Referring website addresses</li>
+            <ul className="list-disc pl-6 mb-6 text-gray-600">
+              <li>Provide and improve our architectural services</li>
+              <li>Communicate with you about your projects</li>
+              <li>Send you updates about our services</li>
+              <li>Respond to your inquiries and requests</li>
+              <li>Comply with legal obligations</li>
             </ul>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">3. How We Use Your Information</h2>
-            <p className="mb-4">
-              We use your personal information for the following purposes:
+            
+            <h2 className="text-2xl font-bold mt-8 mb-4">3. Information Sharing</h2>
+            <p className="text-gray-600 mb-6">
+              We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy. We may share your information with:
             </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Responding to your inquiries and providing customer service</li>
-              <li>Processing and fulfilling your requests or transactions</li>
-              <li>Sending communications, including marketing materials, about our products, services, and events</li>
-              <li>Improving our website, services, and business operations</li>
-              <li>Conducting research and analysis to better understand our customers' needs</li>
-              <li>Complying with legal obligations</li>
-              <li>Protecting our rights, property, and safety, and the rights, property, and safety of others</li>
+            <ul className="list-disc pl-6 mb-6 text-gray-600">
+              <li>Service providers who assist us in operating our website and providing services</li>
+              <li>Legal authorities when required by law</li>
+              <li>Business partners with your explicit consent</li>
             </ul>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">4. How We Share Your Information</h2>
-            <p className="mb-4">
-              We may share your personal information with:
+            
+            <h2 className="text-2xl font-bold mt-8 mb-4">4. Data Security</h2>
+            <p className="text-gray-600 mb-6">
+              We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
             </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Service providers who perform services on our behalf</li>
-              <li>Professional advisors, including lawyers, auditors, and insurers</li>
-              <li>Government authorities or law enforcement officials if required by law</li>
-              <li>Potential buyers or investors in the event of a business transaction (e.g., sale, merger, or acquisition)</li>
+            
+            <h2 className="text-2xl font-bold mt-8 mb-4">5. Cookies and Tracking</h2>
+            <p className="text-gray-600 mb-6">
+              Our website may use cookies and similar tracking technologies to enhance your experience. You can control cookie settings through your browser preferences. We use these technologies to:
+            </p>
+            <ul className="list-disc pl-6 mb-6 text-gray-600">
+              <li>Remember your preferences and settings</li>
+              <li>Analyze website traffic and usage patterns</li>
+              <li>Improve our website functionality</li>
+              <li>Provide personalized content</li>
             </ul>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">5. Data Security</h2>
-            <p className="mb-6">
-              We implement appropriate technical and organizational measures to protect your personal information against unauthorized or unlawful processing, accidental loss, destruction, or damage. However, no method of transmission over the Internet or electronic storage is 100% secure, so we cannot guarantee absolute security.
-            </p>
-
+            
             <h2 className="text-2xl font-bold mt-8 mb-4">6. Your Rights</h2>
-            <p className="mb-4">
-              Depending on your location, you may have certain rights regarding your personal information, including:
+            <p className="text-gray-600 mb-6">
+              You have the right to:
             </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>The right to access your personal information</li>
-              <li>The right to rectify inaccurate personal information</li>
-              <li>The right to request the deletion of your personal information</li>
-              <li>The right to restrict or object to the processing of your personal information</li>
-              <li>The right to data portability</li>
-              <li>The right to withdraw consent at any time</li>
+            <ul className="list-disc pl-6 mb-6 text-gray-600">
+              <li>Access the personal information we hold about you</li>
+              <li>Request correction of inaccurate information</li>
+              <li>Request deletion of your personal information</li>
+              <li>Object to our processing of your information</li>
+              <li>Withdraw consent at any time</li>
             </ul>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">7. Cookies and Similar Technologies</h2>
-            <p className="mb-6">
-              Our website uses cookies and similar technologies to enhance your experience, gather information about visitors, and track website usage. You can control cookies through your browser settings, but disabling cookies may limit your use of certain features on our website.
+            
+            <h2 className="text-2xl font-bold mt-8 mb-4">7. Children's Privacy</h2>
+            <p className="text-gray-600 mb-6">
+              Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.
             </p>
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">8. Changes to This Privacy Policy</h2>
-            <p className="mb-6">
-              We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will post the revised policy on our website with a new "Last Updated" date.
+            
+            <h2 className="text-2xl font-bold mt-8 mb-4">8. Changes to This Policy</h2>
+            <p className="text-gray-600 mb-6">
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. We encourage you to review this Privacy Policy periodically.
             </p>
-
+            
             <h2 className="text-2xl font-bold mt-8 mb-4">9. Contact Us</h2>
-            <p className="mb-6">
-              If you have any questions about this Privacy Policy or our data practices, please contact us at:
+            <p className="text-gray-600 mb-6">
+              If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
             </p>
-            <p className="mb-6">
-              Email: brinac.co@gmail.com<br />
-              Phone: +254 757 476560<br />
-              Address: Nairobi, Kenya
-            </p>
+            <div className="bg-gray-50 p-6 rounded-lg mb-6">
+              <p className="text-gray-600">
+                <strong>Aktasis Consultancy</strong><br />
+                Email: privacy@aktasisconsultancy.com<br />
+                Phone: +1 (555) 123-4567<br />
+                Address: Downtown Design District, 123 Architecture Ave, Suite 100
+              </p>
+            </div>
+            
+            <div className="mt-12 p-6 bg-gray-50 rounded-lg">
+              <p className="text-sm text-gray-600">
+                <strong>Last updated:</strong> January 2024<br />
+                <strong>Effective date:</strong> January 1, 2024
+              </p>
+            </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </div>
+    </ModernLayout>
   );
 };
 

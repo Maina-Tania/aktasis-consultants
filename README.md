@@ -1,73 +1,227 @@
-# Welcome to your Lovable project
+# Aktasis Consultancy - Professional Architectural Website
 
-## Project info
+A modern, responsive website for Aktasis Consultancy, built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/e1139edb-666e-4875-a422-70f28756594d
+## 🚀 Quick Deploy to Firebase
 
-## How can I edit this code?
+### Option 1: One-Command Deployment
 
-There are several ways of editing your application.
+```bash
+# Make the deployment script executable
+chmod +x deploy.sh
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/e1139edb-666e-4875-a422-70f28756594d) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+# Run the deployment script
+./deploy.sh
 ```
 
-**Edit a file directly in GitHub**
+### Option 2: Manual Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Install dependencies
+npm install
 
-**Use GitHub Codespaces**
+# Install Firebase CLI globally
+npm install -g firebase-tools
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Login to Firebase
+firebase login
 
-## What technologies are used for this project?
+# Build the project
+npm run build
 
-This project is built with:
+# Deploy to Firebase
+firebase deploy --only hosting
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📋 Prerequisites
 
-## How can I deploy this project?
+- Node.js (version 18 or higher)
+- npm (comes with Node.js)
+- Firebase account
 
-Simply open [Lovable](https://lovable.dev/projects/e1139edb-666e-4875-a422-70f28756594d) and click on Share -> Publish.
+## 🛠️ Development
 
-## Can I connect a custom domain to my Lovable project?
+```bash
+# Install dependencies
+npm install
 
-Yes it is!
+# Start development server
+npm run dev
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# Build for production
+npm run build
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# Preview production build
+npm run preview
+```
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── layout/         # Layout components (Header, Footer)
+│   ├── home/           # Home page sections
+│   └── ui/             # UI components (buttons, forms, etc.)
+├── pages/              # Page components
+├── utils/              # Utility functions
+└── firebase.ts         # Firebase configuration
+```
+
+## 🎨 Features
+
+- **Modern Design**: Clean, professional architectural aesthetic
+- **Responsive**: Works perfectly on all devices
+- **Performance Optimized**: Fast loading with code splitting
+- **SEO Ready**: Complete meta tags and structured data
+- **Accessibility**: WCAG compliant with proper ARIA labels
+- **Error Handling**: Comprehensive error boundaries
+- **Analytics**: Firebase Analytics integration
+
+## 🔧 Technologies Used
+
+- **React 18** - Modern React with hooks
+- **TypeScript** - Type safety and better DX
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Smooth animations
+- **React Router** - Client-side routing
+- **Firebase** - Hosting and analytics
+- **Radix UI** - Accessible UI components
+
+## 📱 Pages
+
+- **Home** - Landing page with hero section
+- **About Us** - Company information and team
+- **Projects** - Showcase of architectural work
+- **Services** - Detailed service offerings
+- **Portfolio** - Interactive project gallery
+- **Contact** - Contact form and information
+
+## 🚀 Deployment
+
+The project is configured for Firebase Hosting with:
+
+- **Automatic builds** on deployment
+- **CDN distribution** for global performance
+- **HTTPS enforcement** for security
+- **Caching optimization** for static assets
+- **SPA routing** support
+
+### Deployment URLs
+
+After deployment, your site will be available at:
+- `https://aktasis-b3364.web.app`
+- `https://aktasis-b3364.firebaseapp.com`
+
+## 🔍 SEO & Performance
+
+- **Meta tags** for all pages
+- **Open Graph** for social sharing
+- **Structured data** for search engines
+- **Image optimization** with lazy loading
+- **Code splitting** for faster loading
+- **Service Worker** ready for PWA
+
+## 🛡️ Security
+
+- **HTTPS only** deployment
+- **Content Security Policy** ready
+- **No sensitive data** in client code
+- **Firebase security rules** configured
+
+## 📊 Analytics
+
+Firebase Analytics is integrated to track:
+- Page views and user behavior
+- Performance metrics
+- Error tracking
+- User demographics
+
+## 🔧 Scripts
+
+```bash
+# Development
+npm run dev              # Start dev server
+npm run build            # Build for production
+npm run preview          # Preview production build
+
+# Code Quality
+npm run lint             # Run ESLint
+npm run lint:fix         # Fix linting issues
+npm run type-check       # TypeScript check
+npm run format           # Format code with Prettier
+
+# Testing
+npm run test             # Run tests
+npm run test:coverage    # Run tests with coverage
+
+# Deployment
+npm run deploy           # Build and deploy to Firebase
+npm run deploy:hosting   # Deploy only hosting
+```
+
+## 📝 Configuration Files
+
+- `firebase.json` - Firebase hosting configuration
+- `.firebaserc` - Firebase project settings
+- `vite.config.ts` - Vite build configuration
+- `tailwind.config.ts` - Tailwind CSS configuration
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Build fails**: Check TypeScript errors
+   ```bash
+   npm run type-check
+   ```
+
+2. **Deployment fails**: Ensure Firebase login
+   ```bash
+   firebase login
+   ```
+
+3. **404 errors**: Verify SPA routing in `firebase.json`
+
+### Useful Commands
+
+```bash
+# Check Firebase project
+firebase projects:list
+
+# View hosting status
+firebase hosting:channel:list
+
+# Clear cache and redeploy
+npm run clean && npm run build && firebase deploy
+```
+
+## 📚 Documentation
+
+- [Firebase Hosting](https://firebase.google.com/docs/hosting)
+- [Vite Documentation](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Router](https://reactrouter.com/)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
+
+## 📄 License
+
+MIT License - see LICENSE file for details
+
+## 📞 Support
+
+For support or questions:
+- Email: hello@aktasisconsultancy.com
+- Website: https://aktasisconsultancy.com
+
+---
+
+**Built with ❤️ for Aktasis Consultancy**

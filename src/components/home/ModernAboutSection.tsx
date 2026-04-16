@@ -96,17 +96,17 @@ const ModernAboutSection = () => {
             
             {/* Enhanced floating accent elements */}
             <motion.div 
-              className="absolute -bottom-8 -right-8 bg-white p-5 rounded-xl shadow-xl flex items-center space-x-4"
+              className="absolute -bottom-8 -right-8 bg-white p-5 rounded-xl shadow-xl flex items-center space-x-4 z-20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Award className="w-6 h-6 text-white" />
               </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-900">Award Winning</p>
-                <p className="text-xs text-gray-600">Design Excellence</p>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold text-gray-900 leading-tight mb-1">Award Winning</p>
+                <p className="text-xs text-gray-600 leading-tight">Design Excellence</p>
               </div>
             </motion.div>
           </motion.div>

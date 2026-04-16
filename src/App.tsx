@@ -8,12 +8,15 @@ import { Suspense, lazy } from 'react';
 import ModernIndex from "./pages/ModernIndex";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
-import Operations from "./pages/Operations";
 import Sustainability from "./pages/Sustainability";
 import Contact from "./pages/Contact";
-import Portfolio from "./pages/Portfolio";
+import Projects from "./pages/Projects";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
+import ArchitecturalDesign from "./pages/ArchitecturalDesign";
+import SustainableDesign from "./pages/SustainableDesign";
+import InteriorDesign from "./pages/InteriorDesign";
+import ProjectManagement from "./pages/ProjectManagement";
 import ErrorBoundary from "./components/ErrorBoundary";
 import SEO from "./components/SEO";
 import { debounce } from "./utils/performance";
@@ -28,7 +31,7 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 5 * 60 * 1000, // 5 minutes
-      cacheTime: 10 * 60 * 1000, // 10 minutes
+      gcTime: 10 * 60 * 1000, // 10 minutes (formerly cacheTime)
       retry: 1,
       refetchOnWindowFocus: false,
     },
@@ -46,7 +49,7 @@ const LoadingSpinner = () => (
 const reportWebVitals = debounce((metric: any) => {
   if (process.env.NODE_ENV === 'production') {
     // Send to analytics service
-    console.log('Web Vital:', metric);
+    // console.log('Web Vital:', metric);
   }
 }, 1000);
 
@@ -65,10 +68,15 @@ const App = () => {
                   {/* Main Routes */}
                   <Route path="/" element={<ModernIndex />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/operations" element={<Operations />} />
+                  <Route path="/projects" element={<Projects />} />
                   <Route path="/sustainability" element={<Sustainability />} />
                   <Route path="/contact" element={<Contact />} />
-                  <Route path="/portfolio" element={<Portfolio />} />
+                  {/* Redirect old portfolio route to projects */}
+                  <Route path="/portfolio" element={<Projects />} />
+                  <Route path="/architectural-design" element={<ArchitecturalDesign />} />
+                  <Route path="/sustainable-design" element={<SustainableDesign />} />
+                  <Route path="/interior-design" element={<InteriorDesign />} />
+                  <Route path="/project-management" element={<ProjectManagement />} />
                   
                   {/* Lazy-loaded routes */}
                   <Route 

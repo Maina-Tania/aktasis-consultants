@@ -4,17 +4,17 @@ import { ChevronRight, ArrowRight, Phone, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const heroData = {
-  title: "Aktasis Consultancy",
-  subtitle: "Professional Architectural Services",
-  description: "Transform your vision into reality with innovative architectural design solutions for residential, commercial, and sustainable projects.",
+      title: "AKTASIS",
+  subtitle: "Professional Architectural Consultancy",
+  description: "Transform your vision into reality with innovative architectural design solutions. We specialize in residential, commercial, and sustainable projects that inspire and endure.",
   cta: {
-    primary: "Start Your Project",
-    secondary: "View Our Work"
+    primary: "Start Project",
+    secondary: "View Projects"
   },
   features: [
-    "Licensed & Certified",
-    "5+ Years Experience",
-    "50+ Projects Completed"
+    "Innovative Design",
+    "Sustainable Solutions",
+    "Expert Consultation"
   ]
 };
 
@@ -48,8 +48,8 @@ const HeroSection = () => {
             className="inline-flex items-center px-4 py-2 bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 rounded-full text-blue-300 text-sm font-medium mb-6 md:mb-8"
           >
             <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
-            <span className="hidden sm:inline">Licensed Architectural Consultancy</span>
-            <span className="sm:hidden">Licensed & Certified</span>
+            <span className="hidden sm:inline">Global Talent Platform</span>
+            <span className="sm:hidden">Global Platform</span>
           </motion.div>
 
           {/* Main Title */}
@@ -124,7 +124,7 @@ const HeroSection = () => {
             </Link>
             
             <Link
-              to="/portfolio"
+              to="/projects"
               className="group w-full sm:w-auto border-2 border-white/30 hover:border-white text-white px-6 sm:px-8 py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center justify-center touch-manipulation"
             >
               {heroData.cta.secondary}
@@ -140,9 +140,15 @@ const HeroSection = () => {
             className="mt-8 md:mt-12 px-4"
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-400">
+              <div className="flex flex-col sm:flex-row items-center gap-2">
+                <div className="flex items-center">
+                  <Phone className="w-4 h-4 mr-2" />
+                  <span>+254 721 762 086</span>
+                </div>
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
-                <span>+1 (555) 123-4567</span>
+                  <span>+254 737 186 398</span>
+                </div>
               </div>
               <div className="hidden sm:block w-px h-4 bg-gray-600"></div>
               <div className="flex items-center">

@@ -61,8 +61,8 @@ const ModernContactSection = () => {
                   <MapPin className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Studio Location</h3>
-                  <p className="text-gray-700">Downtown Design District</p>
+                    <h3 className="font-semibold text-lg">Location</h3>
+                    <p className="text-gray-700">Nairobi, Kenya</p>
                 </div>
               </motion.div>
               
@@ -76,7 +76,11 @@ const ModernContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">Phone</h3>
-                  <p className="text-gray-700">+1 (555) 123-4567</p>
+                    <div className="space-y-1">
+                      <p className="text-gray-700">+254 721 762 086</p>
+                      <p className="text-gray-700">+254 737 186 398</p>
+                      <p className="text-gray-700">020 269 2066</p>
+                    </div>
                 </div>
               </motion.div>
               
@@ -120,7 +124,7 @@ const ModernContactSection = () => {
               
               <div>
                 <Label htmlFor="phone">Phone</Label>
-                <Input id="phone" type="tel" placeholder="+1 (555) 123-4567" className="mt-1" />
+                <Input id="phone" type="tel" placeholder="+254 721 762 086" className="mt-1" />
               </div>
               
               <div>

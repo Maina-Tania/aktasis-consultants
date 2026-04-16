@@ -145,11 +145,12 @@ const ModernProjectsSection = () => {
                   variant="ghost" 
                   size="sm" 
                   className="group-hover:text-blue-600 p-0 h-auto"
+                  asChild
                 >
-                  <span className="flex items-center text-sm font-medium">
+                  <Link to="/projects" className="flex items-center text-sm font-medium">
                     View Project
                     <ArrowUpRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </span>
+                  </Link>
                 </Button>
               </div>
             </motion.div>
@@ -165,7 +166,7 @@ const ModernProjectsSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <Button asChild size="lg" className="group">
-            <Link to="/operations" className="flex items-center">
+            <Link to="/projects" className="flex items-center">
               View All Projects
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>

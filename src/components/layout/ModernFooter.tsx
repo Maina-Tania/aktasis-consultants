@@ -12,8 +12,7 @@ import {
   Linkedin,
   ArrowUp,
   Clock,
-  MessageCircle,
-  Building2
+  MessageCircle
 } from 'lucide-react';
 
 const ModernFooter = () => {
@@ -25,15 +24,14 @@ const ModernFooter = () => {
 
   const footerLinks = {
     services: [
-      { name: 'Architectural Design', href: '/sustainability#design' },
-      { name: 'Sustainable Design', href: '/sustainability#sustainable' },
-      { name: 'Interior Design', href: '/sustainability#interior' },
-      { name: 'Project Management', href: '/sustainability#management' }
+      { name: 'Architectural Design', href: '/architectural-design' },
+      { name: 'Sustainable Design', href: '/sustainable-design' },
+      { name: 'Interior Design', href: '/interior-design' },
+      { name: 'Project Management', href: '/project-management' }
     ],
     company: [
       { name: 'About Us', href: '/about' },
-      { name: 'Our Projects', href: '/operations' },
-      { name: 'Portfolio', href: '/portfolio' }
+      { name: 'Our Projects', href: '/projects' }
     ],
     legal: [
       { name: 'Privacy Policy', href: '/privacy-policy' },
@@ -42,10 +40,10 @@ const ModernFooter = () => {
   };
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/aktasisconsultancy' },
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/aktasisconsultancy' },
-    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/aktasisconsultancy' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/aktasisconsultancy' }
+            { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/aktasisconsultants' },
+        { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/aktasisconsultants' },
+        { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/aktasisconsultants' },
+        { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/aktasisconsultants' }
   ];
 
   return (
@@ -67,52 +65,55 @@ const ModernFooter = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                {/* Logo Icon */}
-                <div className="relative">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg">
-                    <Building2 className="text-white w-5 h-5" />
+                {/* AKTASIS CONSULTANTS Logo */}
+                <div className="flex items-center">
+                  {/* AKTASIS Text */}
+                  <span className="text-xl font-bold text-white tracking-wide">
+                    AKTASIS
+                  </span>
+                  
+                  {/* Diamond Logo */}
+                  <div className="mx-2 relative">
+                    <div className="w-6 h-6 relative">
+                      {/* Outer black diamond */}
+                      <div className="absolute inset-0 border-2 border-white transform rotate-45"></div>
+                      {/* Middle white diamond outline */}
+                      <div className="absolute inset-1 border border-white transform rotate-45"></div>
+                      {/* Inner gray diamond with gradient */}
+                      <div className="absolute inset-2 bg-gradient-to-br from-gray-300 to-gray-600 transform rotate-45"></div>
+                    </div>
                   </div>
-                  {/* Animated accent */}
-                  <motion.div
-                    className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                </div>
-                
-                {/* Logo Text */}
-                <div className="ml-3">
-                  <div className="flex items-baseline">
-                    <span className="text-lg font-bold text-white">
-                      AKTASIS
-                    </span>
-                    <motion.span 
-                      className="text-xs text-blue-400 ml-1 font-medium"
-                      animate={{ opacity: [0.7, 1, 0.7] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      ®
-                    </motion.span>
-                  </div>
-                  <span className="block text-xs text-gray-400 font-medium tracking-wider">
-                    CONSULTANCY
+                  
+                  {/* CONSULTANTS Text */}
+                  <span className="text-sm font-bold text-white tracking-wide">
+                    CONSULTANTS
                   </span>
                 </div>
               </motion.div>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Transforming visions into exceptional built environments through innovative architectural design and sustainable practices.
+              Professional architectural consultancy providing innovative design solutions for residential, commercial, and sustainable projects.
             </p>
             
             {/* Contact Info - Mobile Optimized */}
             <div className="space-y-3">
               <div className="flex items-center text-sm text-gray-400">
                 <MapPin className="mr-3 flex-shrink-0" size={16} />
-                <span>123 Architecture Ave, Suite 100</span>
+                  <span>Nairobi, Kenya</span>
+                </div>
+                              <div className="flex flex-col text-sm text-gray-400">
+                  <div className="flex items-center mb-1">
+                    <Phone className="mr-3 flex-shrink-0" size={16} />
+                    <span>+254 721 762 086</span>
+                  </div>
+                  <div className="flex items-center mb-1">
+                    <Phone className="mr-3 flex-shrink-0" size={16} />
+                    <span>+254 737 186 398</span>
               </div>
-              <div className="flex items-center text-sm text-gray-400">
+                  <div className="flex items-center">
                 <Phone className="mr-3 flex-shrink-0" size={16} />
-                <span>+1 (555) 123-4567</span>
+                    <span>020 269 2066</span>
+                  </div>
               </div>
               <div className="flex items-center text-sm text-gray-400">
                 <Mail className="mr-3 flex-shrink-0" size={16} />
@@ -186,7 +187,7 @@ const ModernFooter = () => {
                 Start Your Project
               </Link>
               <Link
-                to="tel:+15551234567"
+                to="tel:+254721762086"
                 className="flex items-center w-full bg-white/10 hover:bg-white/20 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300 touch-manipulation"
               >
                 <Phone className="mr-2" size={16} />
@@ -207,7 +208,7 @@ const ModernFooter = () => {
               viewport={{ once: true }}
               className="text-sm text-gray-400 text-center sm:text-left"
             >
-              © {currentYear} Aktasis Consultancy. All rights reserved.
+              © {currentYear} AKTASIS CONSULTANTS. All rights reserved.
             </motion.div>
 
             {/* Social Links */}

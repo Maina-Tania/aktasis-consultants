@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, ChevronDown, Building2 } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 
 const ModernHeader = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,23 +9,38 @@ const ModernHeader = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
 
+  // Check if current page has light background
+  const hasLightBackground = useMemo(() => {
+    const lightBackgroundPages = [
+      '/about',
+      '/projects',
+      '/contact',
+      '/privacy-policy',
+      '/terms',
+      '/architectural-design',
+      '/sustainable-design',
+      '/interior-design',
+      '/project-management'
+    ];
+    return lightBackgroundPages.includes(location.pathname);
+  }, [location.pathname]);
+
   // Navigation items with dropdown support
   const navigationItems = useMemo(() => [
     { name: 'Home', href: '/', hasDropdown: false },
     { name: 'About', href: '/about', hasDropdown: false },
     { 
-      name: 'Services', 
-      href: '/sustainability', 
+      name: 'Services',
+      href: '/projects',
       hasDropdown: true,
       dropdownItems: [
-        { name: 'Architectural Design', href: '/sustainability#design' },
-        { name: 'Sustainable Design', href: '/sustainability#sustainable' },
-        { name: 'Interior Design', href: '/sustainability#interior' },
-        { name: 'Project Management', href: '/sustainability#management' }
+        { name: 'Architectural Design', href: '/architectural-design' },
+        { name: 'Sustainable Design', href: '/sustainable-design' },
+        { name: 'Interior Design', href: '/interior-design' },
+        { name: 'Project Management', href: '/project-management' }
       ]
     },
-    { name: 'Projects', href: '/operations', hasDropdown: false },
-    { name: 'Portfolio', href: '/portfolio', hasDropdown: false }
+    { name: 'Projects', href: '/projects', hasDropdown: false }
   ], []);
 
   // Handle scroll effect
@@ -59,11 +74,11 @@ const ModernHeader = () => {
 
   const headerClasses = useMemo(() => {
     return `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
+      isScrolled || hasLightBackground
         ? 'bg-black/95 backdrop-blur-xl py-3 shadow-2xl border-b border-white/10' 
         : 'bg-transparent py-5'
     }`;
-  }, [isScrolled]);
+  }, [isScrolled, hasLightBackground]);
 
   const isActive = (href: string) => location.pathname === href;
 
@@ -71,49 +86,19 @@ const ModernHeader = () => {
     <header className={headerClasses} role="banner">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          {/* Enhanced Logo */}
+          {/* Site Logo */}
           <Link 
             to="/" 
             className="flex items-center group"
-            aria-label="Aktasis Consultancy Home"
+            aria-label="Home"
           >
-            <motion.div 
-              className="relative flex items-center"
+            <motion.img
+              src="/logo.png"
+              alt="Site logo"
+              className="h-10 w-auto"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
-            >
-              {/* Logo Icon */}
-              <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:rotate-3">
-                  <Building2 className="text-white w-6 h-6" />
-                </div>
-                {/* Animated accent */}
-                <motion.div
-                  className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-              </div>
-              
-              {/* Logo Text */}
-              <div className="ml-3">
-                <div className="flex items-baseline">
-                  <span className="text-xl font-bold text-white group-hover:text-blue-300 transition-colors duration-300">
-                    AKTASIS
-                  </span>
-                  <motion.span 
-                    className="text-xs text-blue-400 ml-1 font-medium"
-                    animate={{ opacity: [0.7, 1, 0.7] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    ®
-                  </motion.span>
-                </div>
-                <span className="block text-xs text-gray-300 font-medium tracking-wider">
-                  CONSULTANCY
-                </span>
-              </div>
-            </motion.div>
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -125,6 +110,8 @@ const ModernHeader = () => {
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     isActive(item.href)
                       ? 'text-blue-500 bg-blue-500/10'
+                      : hasLightBackground 
+                        ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
                       : 'text-gray-300 hover:text-white hover:bg-white/10'
                   }`}
                 >
@@ -161,17 +148,19 @@ const ModernHeader = () => {
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center"
             >
               <Phone className="mr-2" size={16} />
-              Start Project
+              Get Quote
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors duration-200"
+            className={`lg:hidden p-2 rounded-lg transition-colors duration-200 ${
+              hasLightBackground 
+                ? 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                : 'text-white hover:bg-white/10'
+            }`}
             aria-label="Toggle mobile menu"
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
           >
             <AnimatePresence mode="wait">
               {isMobileMenuOpen ? (
@@ -235,6 +224,8 @@ const ModernHeader = () => {
                               setActiveDropdown(activeDropdown === item.name ? null : item.name);
                             }}
                             className="p-1"
+                            aria-label={`Toggle ${item.name} submenu`}
+                            title={`Toggle ${item.name} submenu`}
                           >
                             <ChevronDown 
                               className={`w-4 h-4 transition-transform duration-200 ${
@@ -278,7 +269,7 @@ const ModernHeader = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Phone className="mr-2" size={16} />
-                    Start Your Project
+                    Join Platform
                   </Link>
                 </div>
               </div>

@@ -1,6 +1,6 @@
-# Firebase Deployment Guide for Aktasis Consultancy
+# Firebase Deployment Guide for AKTASIS CONSULTANTS
 
-This guide will help you deploy your Aktasis Consultancy website to Firebase Hosting.
+This guide will help you deploy your AKTASIS CONSULTANTS website to Firebase Hosting.
 
 ## Prerequisites
 
@@ -70,8 +70,8 @@ firebase deploy --only hosting
 ## Step 6: Verify Deployment
 
 After deployment, Firebase will provide you with a URL where your site is live. It will look something like:
-- `https://aktasis-b3364.web.app`
-- `https://aktasis-b3364.firebaseapp.com`
+- `https://aktasis-consultancy.web.app`
+- `https://aktasis-consultancy.firebaseapp.com`
 
 ## Configuration Files
 
@@ -83,7 +83,7 @@ This file configures Firebase Hosting with:
 - **Ignore patterns**: Excludes unnecessary files
 
 ### .firebaserc
-This file specifies the Firebase project ID: `aktasis-b3364`
+This file specifies the Firebase project ID: `aktasis-consultancy`
 
 ## Performance Optimizations
 
@@ -98,8 +98,8 @@ The deployment includes several performance optimizations:
 
 The Firebase configuration is already set up in `src/firebase.ts` with your project credentials:
 
-- **Project ID**: `aktasis-b3364`
-- **Domain**: `aktasis-b3364.firebaseapp.com`
+- **Project ID**: `aktasis-consultancy`
+- **Domain**: `aktasis-consultancy.firebaseapp.com`
 - **Analytics**: Enabled with measurement ID
 
 ## Custom Domain (Optional)
@@ -189,4 +189,4 @@ After successful deployment:
 4. **Configure CI/CD** for automatic deployments
 5. **Set up staging environment** for testing
 
-Your Aktasis Consultancy website is now live and ready for visitors! 
+Your AKTASIS CONSULTANTS website is now live and ready for visitors! 

@@ -64,7 +64,7 @@ const ModernHeroSection = () => {
             transition={{ duration: 0.8, delay: 0.7 }}
           >
             <Button variant="default" size="lg" asChild>
-              <Link to="/about" className="flex items-center">
+              <Link to="/projects" className="flex items-center">
                 View Our Projects 
                 <ArrowRight className="ml-2" size={18} />
               </Link>

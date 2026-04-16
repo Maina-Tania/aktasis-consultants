@@ -1,6 +1,6 @@
-# Aktasis Consultancy - Professional Architectural Website
+# AKTASIS CONSULTANTS - Professional Architectural Services
 
-A modern, responsive website for Aktasis Consultancy, built with React, TypeScript, and Tailwind CSS.
+A modern, responsive website for AKTASIS CONSULTANTS, built with React, TypeScript, and Tailwind CSS.
 
 ## 🚀 Quick Deploy to Firebase
 
@@ -111,8 +111,8 @@ The project is configured for Firebase Hosting with:
 ### Deployment URLs
 
 After deployment, your site will be available at:
-- `https://aktasis-b3364.web.app`
-- `https://aktasis-b3364.firebaseapp.com`
+- `https://aktasis-consultancy.web.app`
+- `https://aktasis-consultancy.firebaseapp.com`
 
 ## 🔍 SEO & Performance
 
@@ -224,4 +224,4 @@ For support or questions:
 
 ---
 
-**Built with ❤️ for Aktasis Consultancy**
+**Built with ❤️ for AKTASIS CONSULTANTS**

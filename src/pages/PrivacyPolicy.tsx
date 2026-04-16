@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
           
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600 mb-8">
-              At Aktasis Consultancy, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website www.aktasisconsultancy.com or use our services.
+              At AKTASIS CONSULTANTS, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website www.aktasisconsultancy.com or use our services.
             </p>
             
             <h2 className="text-2xl font-bold mt-8 mb-4">1. Information We Collect</h2>
@@ -91,10 +91,10 @@ const PrivacyPolicy = () => {
             </p>
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
               <p className="text-gray-600">
-                <strong>Aktasis Consultancy</strong><br />
-                Email: privacy@aktasisconsultancy.com<br />
-                Phone: +1 (555) 123-4567<br />
-                Address: Downtown Design District, 123 Architecture Ave, Suite 100
+                <strong>AKTASIS CONSULTANTS</strong><br />
+Email: hello@aktasisconsultancy.com<br />
+                Phone: +254 721 762 086<br />
+                Address: Nairobi, Kenya
               </p>
             </div>
             

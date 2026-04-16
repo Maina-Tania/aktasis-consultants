@@ -130,7 +130,7 @@ const Services = () => {
               Our <span className="text-blue-500">Services</span> & Expertise
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-2xl">
-              Comprehensive architectural solutions tailored to your vision, from concept to completion with Aktasis Consultancy.
+              Comprehensive architectural solutions tailored to your needs, from sustainable design to innovative building solutions with AKTASIS.
             </p>
             
             {/* CTA buttons */}
@@ -183,7 +183,7 @@ const Services = () => {
               Comprehensive <span className="text-blue-500">Architectural Services</span>
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              From initial concept to final construction, Aktasis Consultancy provides end-to-end architectural solutions that bring your vision to life.
+              From initial concept to project completion, AKTASIS provides end-to-end architectural solutions that bring your vision to life.
             </p>
           </motion.div>
 
@@ -204,7 +204,7 @@ const Services = () => {
               </p>
               <div className="pt-6 text-center">
                 <Button variant="ghost" size="sm" className="text-blue-500 hover:bg-blue-500/10" asChild>
-                  <Link to="/portfolio">
+                  <Link to="/projects">
                     View Projects
                   </Link>
                 </Button>
@@ -227,7 +227,7 @@ const Services = () => {
               </p>
               <div className="pt-6 text-center">
                 <Button variant="ghost" size="sm" className="text-blue-500 hover:bg-blue-500/10" asChild>
-                  <Link to="/portfolio">
+                  <Link to="/projects">
                     Learn More
                   </Link>
                 </Button>
@@ -250,7 +250,7 @@ const Services = () => {
               </p>
               <div className="pt-6 text-center">
                 <Button variant="ghost" size="sm" className="text-blue-500 hover:bg-blue-500/10" asChild>
-                  <Link to="/portfolio">
+                  <Link to="/projects">
                     View Examples
                   </Link>
                 </Button>
@@ -392,7 +392,7 @@ const Services = () => {
             transition={{ duration: 0.7 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Why Choose <span className="text-blue-500">Aktasis Consultancy</span>
+              Why Choose <span className="text-blue-500">AKTASIS</span>
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Experience the difference of working with a dedicated architectural consultant who puts your vision first.
@@ -471,8 +471,8 @@ const Services = () => {
                   Get Started Today
                 </Link>
               </Button>
-              <Button variant="outline" size="apple-lg" className="text-white border-white hover:bg-white/10" asChild>
-                <Link to="/portfolio" className="flex items-center">
+              <Button variant="outline" size="apple-lg" className="bg-white/10 text-white border-white hover:bg-white/30 hover:text-white backdrop-blur-sm" asChild>
+                <Link to="/projects" className="flex items-center">
                   View Our Work
                 </Link>
               </Button>

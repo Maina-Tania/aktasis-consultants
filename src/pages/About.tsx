@@ -38,7 +38,7 @@ const About = () => {
     {
       year: '2005',
       title: 'Foundation',
-      description: 'Aktasis Consultancy was established with a focus on innovative residential design and sustainable architecture.',
+      description: 'AKTASIS was established with a focus on creating innovative architectural solutions for diverse projects.',
     },
     {
       year: '2010',
@@ -121,7 +121,7 @@ const About = () => {
               variants={itemVariants}
             >
               <Globe className="w-4 h-4 mr-2" />
-              About Aktasis Consultancy
+              About AKTASIS
             </motion.div>
             
             <motion.h1 
@@ -132,11 +132,23 @@ const About = () => {
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto"
+              className="text-xl md:text-2xl text-gray-600 mb-6 leading-relaxed max-w-3xl mx-auto"
               variants={itemVariants}
             >
               We are a forward-thinking architectural studio dedicated to creating innovative, sustainable designs that transform how people live, work, and interact with their environments.
             </motion.p>
+            
+            <motion.div 
+              className="text-center mb-12"
+              variants={itemVariants}
+            >
+              <p className="text-lg text-gray-700 mb-2">
+                <strong>Principal Architect:</strong> MAINA E. NGATIA
+              </p>
+              <p className="text-sm text-gray-500">
+                B. Arch Hons (UON), MAAK
+              </p>
+            </motion.div>
             
             <motion.div 
               className="grid grid-cols-2 md:grid-cols-4 gap-8"

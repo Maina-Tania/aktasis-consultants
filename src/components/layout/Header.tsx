@@ -23,21 +23,18 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-milgen-black py-3 shadow-md' : 'bg-transparent py-5'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-xl py-3 shadow-2xl border-b border-white/10' : 'bg-transparent py-5'}`}>
       <div className="container-custom flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold text-milgen-yellow">MILGEN</span>
-          <span className="text-2xl font-bold text-white ml-1">MINES</span>
+          <img src="/logo.png" alt="Aktasis logo" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <NavLink to="/" label="Home" />
-          <NavLink to="/about" label="About Us" />
-          <NavLink to="/operations" label="Operations" />
-          <NavLink to="/sustainability" label="Sustainability" />
-          <NavLink to="/leadership" label="Leadership" />
+          <NavLink to="/about" label="About" />
+          <NavLink to="/projects" label="Projects" />
           <NavLink to="/contact" label="Contact" />
         </nav>
 
@@ -52,13 +49,11 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-milgen-black py-4 px-4 absolute top-full left-0 right-0">
+        <div className="md:hidden bg-black/95 backdrop-blur-xl py-4 px-4 absolute top-full left-0 right-0 border-b border-white/10">
           <div className="flex flex-col space-y-4">
             <MobileNavLink to="/" label="Home" onClick={() => setMobileMenuOpen(false)} />
-            <MobileNavLink to="/about" label="About Us" onClick={() => setMobileMenuOpen(false)} />
-            <MobileNavLink to="/operations" label="Operations" onClick={() => setMobileMenuOpen(false)} />
-            <MobileNavLink to="/sustainability" label="Sustainability" onClick={() => setMobileMenuOpen(false)} />
-            <MobileNavLink to="/leadership" label="Leadership" onClick={() => setMobileMenuOpen(false)} />
+            <MobileNavLink to="/about" label="About" onClick={() => setMobileMenuOpen(false)} />
+            <MobileNavLink to="/projects" label="Projects" onClick={() => setMobileMenuOpen(false)} />
             <MobileNavLink to="/contact" label="Contact" onClick={() => setMobileMenuOpen(false)} />
           </div>
         </div>
@@ -71,7 +66,7 @@ const NavLink = ({ to, label }: { to: string; label: string }) => {
   return (
     <Link 
       to={to} 
-      className="text-white hover:text-milgen-yellow transition-colors duration-300 font-medium"
+      className="text-white hover:text-blue-400 transition-colors duration-300 font-medium"
     >
       {label}
     </Link>
@@ -82,7 +77,7 @@ const MobileNavLink = ({ to, label, onClick }: { to: string; label: string; onCl
   return (
     <Link 
       to={to} 
-      className="text-white hover:text-milgen-yellow transition-colors duration-300 block py-2 font-medium"
+      className="text-white hover:text-blue-400 transition-colors duration-300 block py-2 font-medium"
       onClick={onClick}
     >
       {label}

@@ -24,7 +24,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    // Form submitted successfully
   };
 
   return (
@@ -77,10 +77,9 @@ const Contact = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Our Studio</h3>
-                    <p className="text-gray-600">123 Architecture Ave, Suite 100</p>
-                    <p className="text-gray-600">Downtown Design District</p>
-                    <p className="text-gray-600">City, State 12345</p>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-2">Contact Information</h3>
+                      <p className="text-gray-600">P.O. Box 20701-00100</p>
+                      <p className="text-gray-600">Nairobi, Kenya</p>
                   </div>
                 </div>
 
@@ -92,8 +91,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-gray-600">Mon-Fri: 9:00 AM - 6:00 PM</p>
+                      <div className="space-y-1">
+                        <p className="text-gray-600">+254 721 762 086</p>
+                        <p className="text-gray-600">+254 737 186 398</p>
+                        <p className="text-gray-600">020 269 2066</p>
+                      </div>
+                      <p className="text-gray-600 mt-2">Mon-Fri: 9:00 AM - 6:00 PM</p>
                   </div>
                 </div>
 
@@ -105,8 +108,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-                    <p className="text-gray-600">hello@aktasisconsultancy.com</p>
-                    <p className="text-gray-600">projects@aktasisconsultancy.com</p>
+                                              <p className="text-gray-600">hello@aktasisconsultancy.com</p>
+            <p className="text-gray-600">support@aktasisconsultancy.com</p>
                   </div>
                 </div>
 
@@ -128,7 +131,7 @@ const Contact = () => {
               {/* Quick Actions */}
               <div className="space-y-4">
                 <Link
-                  to="tel:+15551234567"
+                  to="tel:+254721762086"
                   className="flex items-center w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
                 >
                   <Phone className="mr-3" size={20} />

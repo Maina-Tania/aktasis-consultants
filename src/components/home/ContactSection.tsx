@@ -10,16 +10,17 @@ const ContactSection = () => {
       icon: MapPin,
       title: "Visit Our Studio",
       details: [
-        "123 Architecture Ave, Suite 100",
-        "Downtown Design District",
-        "City, State 12345"
+        "P.O. Box 20701-00100",
+        "Nairobi, Kenya"
       ]
     },
     {
       icon: Phone,
       title: "Call Us",
       details: [
-        "+1 (555) 123-4567",
+        "+254 721 762 086",
+        "+254 737 186 398", 
+        "020 269 2066",
         "Mon-Fri: 9:00 AM - 6:00 PM"
       ]
     },
@@ -27,8 +28,8 @@ const ContactSection = () => {
       icon: Mail,
       title: "Email Us",
       details: [
-        "hello@aktasisconsultancy.com",
-        "projects@aktasisconsultancy.com"
+                    "hello@aktasisconsultancy.com",
+            "support@aktasisconsultancy.com"
       ]
     }
   ];
@@ -88,7 +89,7 @@ const ContactSection = () => {
             >
               <div className="flex flex-wrap gap-3">
                 <Link
-                  to="tel:+15551234567"
+                  to="tel:+254721762086"
                   className="flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white text-sm font-medium transition-all duration-300 hover:bg-white/30 touch-manipulation"
                 >
                   <Phone className="mr-2" size={16} />

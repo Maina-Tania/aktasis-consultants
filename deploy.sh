@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Aktasis Consultancy Firebase Deployment Script
-echo "🚀 Starting deployment for Aktasis Consultancy..."
+# AKTASIS CONSULTANTS Firebase Deployment Script
+echo "🚀 Starting deployment for AKTASIS CONSULTANTS..."
 
 # Check if Node.js is installed
 if ! command -v node &> /dev/null; then
@@ -49,5 +49,5 @@ firebase deploy --only hosting
 
 echo "🎉 Deployment completed!"
 echo "🌐 Your site should be available at:"
-echo "   https://aktasis-b3364.web.app"
-echo "   https://aktasis-b3364.firebaseapp.com" 
+echo "   https://aktasis-consultancy.web.app"
+echo "   https://aktasis-consultancy.firebaseapp.com" 

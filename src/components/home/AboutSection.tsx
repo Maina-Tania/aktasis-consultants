@@ -38,14 +38,14 @@ const AboutSection = () => {
           >
             <div className="mb-6 sm:mb-8">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                About <span className="text-blue-600">Aktasis</span> Consultancy
+                About <span className="text-blue-600">AKTASIS</span> Consultancy
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8">
-                We are a premier architectural consultancy dedicated to transforming visions into exceptional built environments. 
-                Our commitment to innovative design, sustainable practices, and client satisfaction sets us apart in the industry.
+                We are a premier architectural consultancy dedicated to creating innovative, sustainable designs that transform spaces and enhance lives. 
+                Our commitment to excellence, creativity, and environmental responsibility sets us apart in the industry.
               </p>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8">
-                Aktasis Consultancy leads in <span className="font-semibold">innovative architectural design and sustainable building solutions</span>.
+                AKTASIS leads in <span className="font-semibold">architectural innovation and sustainable design solutions</span>.
               </p>
             </div>
 
@@ -136,7 +136,7 @@ const AboutSection = () => {
             <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800"
-                alt="Aktasis Consultancy - Professional Architectural Services"
+                alt="AKTASIS - Professional Architectural Consultancy"
                 className="w-full h-64 sm:h-80 md:h-96 lg:h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

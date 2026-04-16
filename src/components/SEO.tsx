@@ -15,19 +15,19 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Aktasis Consultancy - Professional Architectural Services',
-  description = 'Leading architectural consultancy providing innovative design solutions for residential, commercial, and sustainable projects. Transform your vision into reality with Aktasis Consultancy.',
+  title = 'AKTASIS CONSULTANTS - Professional Architectural Services',
+  description = 'Leading architectural consultancy providing innovative design solutions for residential, commercial, and sustainable projects. Transform your vision into reality with AKTASIS CONSULTANTS.',
   keywords = 'architectural consultancy, architectural design, sustainable architecture, residential design, commercial architecture, interior design, building design, construction, architectural services',
   image = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200',
   url = 'https://aktasisconsultancy.com',
   type = 'website',
-  author = 'Aktasis Consultancy',
+  author = 'AKTASIS CONSULTANTS',
   publishedTime,
   modifiedTime,
   section,
   tags = []
 }) => {
-  const fullTitle = title.includes('Aktasis') ? title : `${title} | Aktasis Consultancy`;
+  const fullTitle = title.includes('AKTASIS') ? title : `${title} | AKTASIS CONSULTANTS`;
   const fullUrl = url.startsWith('http') ? url : `https://aktasisconsultancy.com${url}`;
   const fullImage = image.startsWith('http') ? image : `https://aktasisconsultancy.com${image}`;
 
@@ -51,7 +51,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image" content={fullImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="Aktasis Consultancy" />
+      <meta property="og:site_name" content="AKTASIS CONSULTANTS" />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
@@ -60,8 +60,8 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImage} />
-      <meta name="twitter:site" content="@aktasisconsultancy" />
-      <meta name="twitter:creator" content="@aktasisconsultancy" />
+      <meta name="twitter:site" content="@aktasisconsultants" />
+      <meta name="twitter:creator" content="@aktasisconsultants" />
 
       {/* Article specific meta tags */}
       {type === 'article' && (
@@ -78,12 +78,8 @@ const SEO: React.FC<SEOProps> = ({
       {/* Canonical URL */}
       <link rel="canonical" href={fullUrl} />
 
-      {/* Favicon and App Icons */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="manifest" href="/site.webmanifest" />
+      {/* Favicon */}
+      <link rel="icon" type="image/png" href="/favicon.png" />
 
       {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -95,66 +91,21 @@ const SEO: React.FC<SEOProps> = ({
         __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ArchitectureFirm",
-          "name": "Aktasis Consultancy",
+          "name": "AKTASIS CONSULTANTS",
           "description": description,
           "url": "https://aktasisconsultancy.com",
           "logo": "https://aktasisconsultancy.com/logo.png",
           "image": fullImage,
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Architecture Ave, Suite 100",
-            "addressLocality": "Downtown Design District",
-            "addressCountry": "US"
-          },
+          "sameAs": [
+            "https://www.linkedin.com/company/aktasisconsultants",
+            "https://www.instagram.com/aktasisconsultants",
+            "https://www.facebook.com/aktasisconsultants"
+          ],
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "+1-555-123-4567",
             "contactType": "customer service",
             "email": "hello@aktasisconsultancy.com"
-          },
-          "sameAs": [
-            "https://www.linkedin.com/company/aktasis-consultancy",
-            "https://www.instagram.com/aktasisconsultancy",
-            "https://www.facebook.com/aktasisconsultancy"
-          ],
-          "serviceArea": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": 40.7128,
-              "longitude": -74.0060
-            },
-            "geoRadius": "50000"
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Architectural Services",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Architectural Design",
-                  "description": "Complete architectural design services including concept development, detailed drawings, and construction documentation."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Sustainable Design",
-                  "description": "Eco-friendly architectural solutions that prioritize energy efficiency and environmental responsibility."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Interior Design",
-                  "description": "Seamless interior design integration that complements architectural vision."
-                }
-              }
-            ]
           }
         })
       }} />

@@ -49,7 +49,7 @@ const MiningOperationsSection = () => {
             Our <span className="text-blue-600">Projects</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Aktasis Consultancy operates across diverse architectural sectors, delivering innovative design solutions 
+            AKTASIS operates across diverse architectural sectors, delivering innovative design solutions 
             for residential, commercial, and sustainable projects that transform spaces and enhance communities.
           </p>
         </motion.div>
@@ -95,7 +95,7 @@ const MiningOperationsSection = () => {
                     {project.location}
                   </div>
                   <Link
-                    to={`/portfolio/${project.id}`}
+                    to={`/projects/${project.id}`}
                     className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center"
                   >
                     View Details
@@ -116,7 +116,7 @@ const MiningOperationsSection = () => {
           className="text-center"
         >
           <Link
-            to="/portfolio"
+            to="/projects"
             className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
           >
             View All Projects

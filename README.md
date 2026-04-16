@@ -108,11 +108,6 @@ The project is configured for Firebase Hosting with:
 - **Caching optimization** for static assets
 - **SPA routing** support
 
-### Deployment URLs
-
-After deployment, your site will be available at:
-- `https://aktasis-consultancy.web.app`
-- `https://aktasis-consultancy.firebaseapp.com`
 
 ## 🔍 SEO & Performance
 
@@ -216,12 +211,3 @@ npm run clean && npm run build && firebase deploy
 
 MIT License - see LICENSE file for details
 
-## 📞 Support
-
-For support or questions:
-- Email: hello@aktasisconsultancy.com
-- Website: https://aktasisconsultancy.com
-
----
-
-**Built with ❤️ for AKTASIS CONSULTANTS**
